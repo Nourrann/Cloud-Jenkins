@@ -2,22 +2,31 @@ pipeline {
     agent any
     
     stages {
+        stage('Checkout') {
+            steps {
+                // Checkout your source code from Git
+                git 'https://github.com/Nourrann/Cloud-Jenkins'
+            }
+        }
+
         stage('Build') {
             steps {
-                sh 'echo "Building..."'
-                sh 'ls -l'
+                // Replace 'sh' with 'bat' for Windows
+                bat 'dir'  // Example command, replace with your actual commands
             }
         }
+
         stage('Test') {
             steps {
-                sh 'echo "Testing..."'
-                sh 'npm test'
+                // Replace 'sh' with 'bat' for Windows
+                bat 'echo Testing...'  // Example command, replace with your actual commands
             }
         }
+
         stage('Deploy') {
             steps {
-                sh 'echo "Deploying..."'
-                // Add deployment steps here
+                // Replace 'sh' with 'bat' for Windows
+                bat 'echo Deploying...'  // Example command, replace with your actual commands
             }
         }
     }
